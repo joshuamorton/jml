@@ -1,13 +1,14 @@
 [[source]]
-url = "https://pypi.python.org/simple"
 verify_ssl = true
+url = "https://pypi.python.org/simple"
 
 [packages]
-ipython = "*"
-matplotlib = "*"
 opencv-python = "*"
-scipy = "*"
-pyyaml = "*"
+seaborn = "*"
 jupyter = "*"
 tensorflow = "*"
+ipython = "*"
 numpy = "*"
+pyyaml = "*"
+matplotlib = "*"
+scipy = "*"
