@@ -1,0 +1,188 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "82465638688deea2b3aab9f00e647058469bef82683e429c36e4f7f5dba48775"
+        },
+        "requires": {},
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "backports-abc": {
+            "version": "==0.5"
+        },
+        "backports.weakref": {
+            "version": "==1.0rc1"
+        },
+        "bleach": {
+            "version": "==2.0.0"
+        },
+        "cycler": {
+            "version": "==0.10.0"
+        },
+        "decorator": {
+            "version": "==4.1.1"
+        },
+        "entrypoints": {
+            "version": "==0.2.3"
+        },
+        "html5lib": {
+            "version": "==0.999999999"
+        },
+        "ipykernel": {
+            "version": "==4.6.1"
+        },
+        "ipython": {
+            "version": "==6.1.0"
+        },
+        "ipython-genutils": {
+            "version": "==0.2.0"
+        },
+        "ipywidgets": {
+            "version": "==6.0.0"
+        },
+        "jedi": {
+            "version": "==0.10.2"
+        },
+        "jinja2": {
+            "version": "==2.9.6"
+        },
+        "jsonschema": {
+            "version": "==2.6.0"
+        },
+        "jupyter": {
+            "version": "==1.0.0"
+        },
+        "jupyter-client": {
+            "version": "==5.1.0"
+        },
+        "jupyter-console": {
+            "version": "==5.1.0"
+        },
+        "jupyter-core": {
+            "version": "==4.3.0"
+        },
+        "markdown": {
+            "version": "==2.6.8"
+        },
+        "markupsafe": {
+            "version": "==1.0"
+        },
+        "matplotlib": {
+            "version": "==2.0.2"
+        },
+        "mistune": {
+            "version": "==0.7.4"
+        },
+        "nbconvert": {
+            "version": "==5.2.1"
+        },
+        "nbformat": {
+            "version": "==4.3.0"
+        },
+        "notebook": {
+            "version": "==5.0.0"
+        },
+        "numpy": {
+            "version": "==1.13.1"
+        },
+        "opencv-python": {
+            "version": "==3.2.0.8"
+        },
+        "pandocfilters": {
+            "version": "==1.4.1"
+        },
+        "pexpect": {
+            "version": "==4.2.1"
+        },
+        "pickleshare": {
+            "version": "==0.7.4"
+        },
+        "prompt-toolkit": {
+            "version": "==1.0.14"
+        },
+        "protobuf": {
+            "version": "==3.3.0"
+        },
+        "ptyprocess": {
+            "version": "==0.5.2"
+        },
+        "pygments": {
+            "version": "==2.2.0"
+        },
+        "pyparsing": {
+            "version": "==2.2.0"
+        },
+        "pyside": {
+            "version": "==1.2.4"
+        },
+        "python-dateutil": {
+            "version": "==2.6.1"
+        },
+        "pytz": {
+            "version": "==2017.2"
+        },
+        "pyyaml": {
+            "version": "==3.12"
+        },
+        "pyzmq": {
+            "version": "==16.0.2"
+        },
+        "qtconsole": {
+            "version": "==4.3.0"
+        },
+        "scipy": {
+            "version": "==0.19.1"
+        },
+        "seaborn": {
+            "version": "==0.8"
+        },
+        "setuptools": {
+            "version": "==36.2.0"
+        },
+        "simplegeneric": {
+            "version": "==0.8.1"
+        },
+        "six": {
+            "version": "==1.10.0"
+        },
+        "tensorflow": {
+            "version": "==1.2.1"
+        },
+        "terminado": {
+            "version": "==0.6"
+        },
+        "testpath": {
+            "version": "==0.3.1"
+        },
+        "tornado": {
+            "version": "==4.5.1"
+        },
+        "traitlets": {
+            "version": "==4.3.2"
+        },
+        "typing": {
+            "version": "==3.6.1"
+        },
+        "wcwidth": {
+            "version": "==0.1.7"
+        },
+        "webencodings": {
+            "version": "==0.5.1"
+        },
+        "werkzeug": {
+            "version": "==0.12.2"
+        },
+        "wheel": {
+            "version": "==0.29.0"
+        },
+        "widgetsnbextension": {
+            "version": "==2.0.0"
+        }
+    },
+    "develop": {}
+}
