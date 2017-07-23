@@ -10,15 +10,15 @@ import numpy as np
 def boxed_coord(width, height, radius):
     """Selects a set of coordinates a given distance away from image edges.
     """
-    x = random.randint(radius, height - radius)
-    y = random.randint(radius, width - radius)
+    x = random.randint(radius, height - radius - 1)
+    y = random.randint(radius, width - radius - 1)
     return x, y
 
 def random_boxed_circle(width, height, radius):
     """Creates an image containing a circle at a random location.
 
     Args:
-        width: widht of output image
+        width: width of output image
         height: height of output image
         radius: radius of the resulting circle
     Return:
