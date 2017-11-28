@@ -34,4 +34,11 @@ def random_boxed_circle(width, height, radius):
     img = cv2.circle(empty, (x, y), radius, color=(1,1,1), thickness=-1)
     # convert image to greyscale
     img = img[:,:,1]
-    return img, (x, y)
+    return img, (x / width, y / height)
+
+def circle(x, y, radius, shape=(10, 10)):
+    width, height = shape
+    empty = np.zeros((width, height, 3))
+    img = cv2.circle(empty, (x, y), radius, color=(1,1,1), thickness=-1)
+    img = img[:,:,1]
+    return img.reshape([width, height, 1])
