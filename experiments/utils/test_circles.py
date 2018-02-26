@@ -27,3 +27,17 @@ def test_random_boxed_circle(mock_coord):
     circ, (x, y) = circles.random_boxed_circle(10, 10, 2)
     assert (x, y) == (0.5, 0.5)
     assert np.sum(circ) == 13  # a 5x5 circle has 13 on pixels
+
+@pytest.mark.parametrize('x,y,r,s,cnt', [
+    (5, 5, 2, (10, 10), 13),
+    (3, 3, 2, (10, 10), 13),
+    (5, 5, 1, (10, 10), 5),
+    (5, 5, 0, (10, 10), 1),
+    (0, 5, 2, (10, 10), 9),
+    (5, 0, 2, (10, 10), 9),
+    (10, 10, 2, (10, 10), 1),
+])
+def test_circle(x, y, r, s, cnt):
+    c = circles.circle(x, y, r, s)
+    assert np.sum(c) == cnt
+
