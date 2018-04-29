@@ -1,6 +1,8 @@
+from typing import Iterable
 import numpy as np
 
-def flatten_indicies(vals, shape=(10, 10)):
+
+def flatten_indicies(vals: Iterable[Iterable[int]], shape: Iterable[int] = (10, 10)):
     """
     Flattens a set of coordinates to a coordinate in a 1-hot vector.
 
