@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 
+from tqdm import tqdm
+
 import seaborn
 
 from utils.circles import random_boxed_circle, circle
@@ -40,7 +42,7 @@ learning_rate = tf.train.exponential_decay(
 train_step = tf.train.GradientDescentOptimizer(
         learning_rate).minimize(loss, global_step=global_step)
 
-dims = [range(10), range(10)]
+dims = (range(1,9), range(1,9))
 test_x = [circle(x, y, 1, shape=(10, 10)) for x, y in itertools.product(*dims)]
 test_y = [(x/10, y/10) for x, y in itertools.product(*dims)]
 
@@ -48,7 +50,7 @@ if __name__ == '__main__':
     sess = tf.InteractiveSession()
     sess.run(tf.global_variables_initializer())
     mses = []
-    for _ in range(10000):
+    for _ in tqdm(range(10000)):
         # zip(*i) is a fast way to transpose the iterable "i", so this takes
         # [(img, (x, y)), ...] and converts it to ([img, ...], [(x, y), ...])
         xs, ys = zip(*[random_boxed_circle(10, 10, 1) for i in range(100)])
@@ -57,7 +59,6 @@ if __name__ == '__main__':
         if _ % 100 == 0:
             mses.append(
                     sess.run(loss, feed_dict={image: test_x, correct: test_y}))
-            print(mses[-1])
 
     pairs = sess.run(coords, feed_dict={image: test_x, correct: test_y})
     plt.plot(mses)
