@@ -11,6 +11,7 @@ import seaborn
 
 from utils.circles import random_boxed_circle, circle
 
+global_step = tf.Variable(0, trainable=False)
 conv_filter = tf.get_variable('conv_filter', shape=[3,3,1,1], 
         initializer=tf.contrib.layers.xavier_initializer())
 
@@ -34,7 +35,10 @@ coords = tf.nn.softmax(tf.matmul(one_hot, W) + b)
 correct = tf.placeholder(tf.float32, [None, 2])
 
 loss = tf.reduce_mean(tf.squared_difference(coords, correct))
-train_step = tf.train.GradientDescentOptimizer(.01).minimize(loss)
+learning_rate = tf.train.exponential_decay(
+        .75, global_step, 1000, 0.8, staircase=True)
+train_step = tf.train.GradientDescentOptimizer(
+        learning_rate).minimize(loss, global_step=global_step)
 
 dims = [range(10), range(10)]
 test_x = [circle(x, y, 1, shape=(10, 10)) for x, y in itertools.product(*dims)]
