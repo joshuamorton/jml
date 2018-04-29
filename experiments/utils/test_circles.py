@@ -1,8 +1,8 @@
+import random
 from unittest import mock
+
 import numpy as np
 import pytest
-import random
-
 from experiments.utils import circles
 
 
@@ -15,7 +15,7 @@ from experiments.utils import circles
         (10, 10, 1),
         (5, 5, 2),
         (5, 5, 1),
-        (3, 5, 2),
+        (3, 5, 1),
     ],
 )
 def test_boxed_cord(w, h, r):

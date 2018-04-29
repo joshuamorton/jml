@@ -9,13 +9,11 @@ our 2d input space).
 Unsurprisingly, this model performs (very) poorly.
 """
 
-import matplotlib.pyplot as plt
-import tensorflow as tf
-import matplotlib.pyplot as plt
-import seaborn
-
 import sys
 
+import matplotlib.pyplot as plt
+import seaborn
+import tensorflow as tf
 from utils.circles import random_boxed_circle
 
 # 100x100 greyscale image
@@ -28,7 +26,7 @@ y_prime = tf.placeholder(tf.float32, [None, 2])
 mse = tf.reduce_mean(tf.squared_difference(y, y_prime))
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(mse)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sess = tf.InteractiveSession()
     sess.run(tf.global_variables_initializer())
     mses = []

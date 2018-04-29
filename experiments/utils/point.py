@@ -1,8 +1,7 @@
 import random
+from typing import Tuple
 
 import numpy as np
-
-from typing import Tuple
 
 
 def random_point(width: int, height: int) -> Tuple[np.ndarray, Tuple[int, int]]:

@@ -2,10 +2,10 @@
 """
 
 import random
+from typing import Tuple
 
 import cv2
 import numpy as np
-from typing import Tuple
 
 
 def boxed_coord(width: int, height: int, buffer: int) -> Tuple[int, int]:
