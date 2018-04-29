@@ -25,3 +25,7 @@ def test_flatten_indicies_multi_dim():
             shape=(5, 5, 5),
         )
     )
+
+
+def test_make_onehot():
+    assert utils.make_onehot(3, shape=(2, 2)) == [False, False, False, True]
