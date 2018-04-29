@@ -37,7 +37,7 @@ def random_boxed_circle(
     img = cv2.circle(empty, (x, y), radius, color=(1, 1, 1), thickness=-1)
     # convert image to greyscale
     img = img[:, :, 1]
-    return img, (x / width, y / height)
+    return img, (x, y)
 
 
 def circle(

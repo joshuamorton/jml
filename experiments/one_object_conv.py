@@ -29,19 +29,19 @@ W = tf.get_variable(
     "W", shape=[100, 2], initializer=tf.contrib.layers.xavier_initializer()
 )
 b = tf.Variable(tf.zeros([2]), name="b")
-coords = tf.nn.softmax(tf.matmul(one_hot, W) + b)
+coords = tf.matmul(one_hot, W) + b
 
 correct = tf.placeholder(tf.float32, [None, 2])
 
 loss = tf.reduce_mean(tf.squared_difference(coords, correct))
-learning_rate = tf.train.exponential_decay(.75, global_step, 1000, 0.8, staircase=True)
+learning_rate = tf.train.exponential_decay(.005, global_step, 1000, 0.8, staircase=True)
 train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(
     loss, global_step=global_step
 )
 
 dims = (range(1, 9), range(1, 9))
 test_x = [circle(x, y, 1, shape=(10, 10)) for x, y in itertools.product(*dims)]
-test_y = [(x / 10, y / 10) for x, y in itertools.product(*dims)]
+test_y = np.array([(x, y) for x, y in itertools.product(*dims)])
 
 if __name__ == "__main__":
     sess = tf.InteractiveSession()
@@ -52,10 +52,10 @@ if __name__ == "__main__":
         # [(img, (x, y)), ...] and converts it to ([img, ...], [(x, y), ...])
         xs, ys = zip(*[random_boxed_circle(10, 10, 1) for i in range(100)])
         xs = [x.reshape([10, 10, 1]) for x in xs]
+        ys = np.array(ys)
         sess.run(train_step, feed_dict={image: xs, correct: ys})
         if _ % 100 == 0:
             mses.append(sess.run(loss, feed_dict={image: test_x, correct: test_y}))
 
     pairs = sess.run(coords, feed_dict={image: test_x, correct: test_y})
-    plt.plot(mses)
     plt.show()

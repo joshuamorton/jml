@@ -31,7 +31,7 @@ def test_boxed_cord(w, h, r):
 def test_random_boxed_circle(mock_coord):
     mock_coord.return_value = (5, 5)
     circ, (x, y) = circles.random_boxed_circle(10, 10, 2)
-    assert (x, y) == (0.5, 0.5)
+    assert (x, y) == (5, 5)
     assert np.sum(circ) == 13  # a 5x5 circle has 13 on pixels
 
 
