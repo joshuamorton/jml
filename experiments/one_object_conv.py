@@ -58,4 +58,5 @@ if __name__ == "__main__":
             mses.append(sess.run(loss, feed_dict={image: test_x, correct: test_y}))
 
     pairs = sess.run(coords, feed_dict={image: test_x, correct: test_y})
+    plt.plot(mses)
     plt.show()
